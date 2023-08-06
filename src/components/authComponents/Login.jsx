@@ -29,7 +29,7 @@ const Login = () => {
                     "Content-Type": "application/json"
                 }
             }
-            const {data} = await axios.post('/api/v1/users/login', values, config)
+            const {data} = await axios.post('https://chat-app-v1-0-backend.onrender.com/api/v1/users/login', values, config)
             // console.log(data)
             toast({
                 title: 'Success:',
