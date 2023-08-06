@@ -3,7 +3,7 @@ import { Box, Spinner, Tooltip } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
 import {getSender} from '../../config/chatLogics'
-import NotificationBadge from 'react-notification-badge/lib/components/NotificationBadge'
+// import NotificationBadge from 'react-notification-badge/lib/components/NotificationBadge'
 import {
 	Input,
 	Drawer,
@@ -29,7 +29,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import ChatLoading from './ChatLoading'
 import UserListItem from './UserListItem'
-import { Effect } from 'react-notification-badge'
+// import { Effect } from 'react-notification-badge'
 
 const SideDrawer = () => {
 	const [states, setStates] = useState({
@@ -126,10 +126,10 @@ const SideDrawer = () => {
 				<div>
 					<Menu>
 						<MenuButton p={1} m={'0px 10px 0px 10px'}>
-							<NotificationBadge
+							{/* <NotificationBadge
 								count={notification.length}
 								effect={Effect.SCALE}
-							/>
+							/> */}
 							<i className="fa-solid fa-bell" style={{ color: '#000000' }}></i>
 						</MenuButton>
 						<MenuList pl={2}>
