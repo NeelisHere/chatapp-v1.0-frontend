@@ -247,11 +247,12 @@ const SingleChat = () => {
                                 { 
                                     isTyping? 
                                     <div>
-                                        <Lottie 
+                                        {/* <Lottie 
                                             options={defaultOptions}
                                             width={70}
                                             style={{ marginBottom: 15, marginLeft: 0 }}
-                                        />
+                                        /> */}
+                                        Typing...
                                     </div>:
                                     <></>
                                 }
