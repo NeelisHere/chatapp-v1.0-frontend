@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import './styles.css'
 import { io } from "socket.io-client"
-import Lottie from "react-lottie"
+// import Lottie from "react-lottie"
 import animationData from '../../animations/animation_lkv2z5zr.json'
 
 
