@@ -33,7 +33,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` }
             }
-            const { data } = await axios.get('/api/v1/chats/get-chats', config)
+            const { data } = await axios.get('https://chat-app-v1-0-backend.onrender.com/api/v1/chats/get-chats', config)
             setChats([...data])
         } catch (error) {
             toast({
@@ -62,7 +62,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` }
             }
-            const { data } = await axios.put('/api/v1/chats/group/remove-user', {
+            const { data } = await axios.put('https://chat-app-v1-0-backend.onrender.com/api/v1/chats/group/remove-user', {
                 chatId: selectedChat._id,
                 userId: u._id
             }, config)
@@ -91,7 +91,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            let { data } = await axios.put('/api/v1/chats/group/rename', {
+            let { data } = await axios.put('https://chat-app-v1-0-backend.onrender.com/api/v1/chats/group/rename', {
                 chatId: selectedChat._id,
                 chatName: groupChatStates.groupChatName
             }, config)
@@ -124,7 +124,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.get(`/api/v1/users/all-users?search=${groupChatStates.search}`, config)
+            const { data } = await axios.get(`https://chat-app-v1-0-backend.onrender.com/api/v1/users/all-users?search=${groupChatStates.search}`, config)
             // console.log('->', groupChatStates)
             setLoading(false)
             const filteredSearchResults = data.users.filter(({ _id }) => {
@@ -164,7 +164,7 @@ const UpdateGroupChatModal = ({ fetchMessages }) => {
                 headers: { Authorization: `Bearer ${user.token}` }
             }
             // alert(`${selectedChat._id}, ${userToAdd._id}`)
-            const { data } = await axios.put('/api/v1/chats/group/add-user', {
+            const { data } = await axios.put('https://chat-app-v1-0-backend.onrender.com/api/v1/chats/group/add-user', {
                 chatId: selectedChat._id,
                 userId: userToAdd._id
             }, config)

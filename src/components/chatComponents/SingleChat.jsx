@@ -37,7 +37,7 @@ const SingleChat = () => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` }
             }
-            const { data } = await axios.get('/api/v1/chats/get-chats', config)
+            const { data } = await axios.get('https://chat-app-v1-0-backend.onrender.com/api/v1/chats/get-chats', config)
             setChats([...data])
         } catch (error) {
             toast({
@@ -63,7 +63,7 @@ const SingleChat = () => {
                     }
                 }
                 setNewMessage('')
-                const { data } = await axios.post('/api/v1/messages/', {
+                const { data } = await axios.post('https://chat-app-v1-0-backend.onrender.com/api/v1/messages/', {
                     content: newMessage,
                     chatId: selectedChat._id
                 }, config)
@@ -93,7 +93,7 @@ const SingleChat = () => {
                 }
             }
             setLoading(true)
-            const { data } = await axios.get(`/api/v1/messages/${selectedChat._id}`, config);
+            const { data } = await axios.get(`https://chat-app-v1-0-backend.onrender.com/api/v1/messages/${selectedChat._id}`, config);
             setMessages(data)
             // console.log(messages)
             setLoading(false)

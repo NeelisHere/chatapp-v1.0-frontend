@@ -17,7 +17,7 @@ const MyChats = () => {
             const config = {
                 headers: { Authorization: `Bearer ${user.token}` }
             }
-            const { data } = await axios.get('/api/v1/chats/get-chats', config)
+            const { data } = await axios.get('https://chat-app-v1-0-backend.onrender.com/api/v1/chats/get-chats', config)
             setChats([...data])
         } catch (error) {
             toast({

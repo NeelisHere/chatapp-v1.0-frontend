@@ -43,7 +43,7 @@ const GroupChatModal = ({ children }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.get(`/api/v1/users/all-users?search=${groupChatStates.search}`, config)
+            const { data } = await axios.get(`https://chat-app-v1-0-backend.onrender.com/api/v1/users/all-users?search=${groupChatStates.search}`, config)
             // console.log('->', groupChatStates)
             setLoading(false)
             setGroupChatStates({...groupChatStates, searchResult: data.users})
@@ -79,7 +79,7 @@ const GroupChatModal = ({ children }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.post(`/api/v1/chats/group/create`, {
+            const { data } = await axios.post(`https://chat-app-v1-0-backend.onrender.com/api/v1/chats/group/create`, {
                 name: groupChatName,
                 users: JSON.stringify(selectedUsers.map((user)=>user._id))
             }, config)

@@ -60,7 +60,7 @@ const SideDrawer = () => {
 					Authorization: `Bearer ${user.token}`
 				}
 			}
-			const { data } = await axios.get(`/api/v1/users/all-users?search=${states.search}`, config)
+			const { data } = await axios.get(`https://chat-app-v1-0-backend.onrender.com/api/v1/users/all-users?search=${states.search}`, config)
 			setStates({ ...states, loading: false, searchResult: data.users })
 
 		} catch (error) {
@@ -85,7 +85,7 @@ const SideDrawer = () => {
 					Authorization: `Bearer ${user.token}`
 				}
 			}
-			const { data } = await axios.post(`/api/v1/chats/access-chat`, { userId }, config)
+			const { data } = await axios.post(`https://chat-app-v1-0-backend.onrender.com/api/v1/chats/access-chat`, { userId }, config)
 			// console.log('>>', data)
 			// console.log('>>', chats)
 			if(!chats.find((c)=> c._id === data._id))setChats([data, ...chats])
